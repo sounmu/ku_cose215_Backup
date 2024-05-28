@@ -137,7 +137,7 @@ object Implementation extends Template {
       states = state,
       symbols = cfg.symbols,
       alphabets = nts1 ++ cfgsymbols.map(_.toString),
-      trans = finalTransition.withDefaultValue(Set()), //이제 transition만 만들면 끝.
+      trans = finalTransition.withDefaultValue(Set()), 
       initState = q,
       initAlphabet = s,
       finalStates = Set() // empty stack이라 비워두기.

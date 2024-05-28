@@ -104,35 +104,40 @@ object Implementation extends Template {
 
     val state: Set[Int] = Set(q)
 
-    val transition: Map[(Int, Option[Char], String), Set[(Int, List[String])]] = Map()
-
-    for ((variable, rules) <- rule) {
-      for (rule1 <- rules) {
-        val alpha = rule1 match {
-          case rhs: String => List(rhs)
-          case _ => List(rule1.toString)
-        }
-        val varStr = variable.toString
-        transition = transition.updated(
-          (q, None, varStr), 
-          transition.getOrElse((q, None, varStr), Set()) + ((q, alpha))
-        )
+    val initialTransition: Map[(Int, Option[Char], String), Set[(Int, List[String])]] = Map()
+    
+    def rhsConvert(rhs: kuplrg.Rhs): List[String] = {
+      rhs.seq.map {
+        case nt: Nt => nt.toString
+        case s: Symbol => s.toString
       }
     }
 
+    val transitionWithProduct = rule.foldLeft(initialTransition) {
+    case (trans, (variable, rules)) =>
+      rules.foldLeft(trans) {
+        case (innerTrans, rule1) =>
+          val alpha = rhsConvert(rule1)
+          val varStr = variable.toString
+          innerTrans.updated(
+            (q, None, varStr),
+            innerTrans.getOrElse((q, None, varStr), Set()) + ((q, alpha))
+          )
+      }
+    }
 
-    for (terminal <- cfgsymbols) {
-      transition = transition.updated(
-        (q, Some(terminal), terminal.toString),
-        Set((q, List()))
-      )
+    val finalTransition = cfgsymbols.foldLeft(transitionWithProduct){
+      case (trans, terminal) =>
+        trans.updated(
+          (q, Some(terminal), terminal.toString), Set((q, List()))
+        )
     }
 
     PDA(
       states = state,
       symbols = cfg.symbols,
       alphabets = nts1 ++ cfgsymbols.map(_.toString),
-      trans = transition.withDefaultValue(Set()), //이제 transition만 만들면 끝.
+      trans = finalTransition.withDefaultValue(Set()), //이제 transition만 만들면 끝.
       initState = q,
       initAlphabet = s,
       finalStates = Set() // empty stack이라 비워두기.

@@ -174,18 +174,74 @@ object Implementation extends Template {
     val rules: Map[Nt, List[Rhs]] = pda.trans.foldLeft(initialProduct) { case (acc, ((q, a, x), set)) =>
       set.foldLeft(acc) { case (innerAcc, (p, gamma)) => //p는 Set안에 Int, gamma는 List[]
         val key = s"A$q$x$p"
-        val value: List[Rhs] = a match {
-          case Some(symbol) => //symbol이 있을 때
-            val rhsSeq = symbol +: gamma.map(g => s"A$p$g$q").mkString(" ")
-            List(String2Rhs(rhsSeq))
-          case None => //symbol이 없을 때 == epsilon일 때
-            val rhsSeq = gamma.map(g => s"A$p$g$q").mkString(" ")
-            List(String2Rhs(rhsSeq))
+        val value: List[Rhs] = if (gamma.isEmpty) { // 스택을 버릴 때
+          a match {
+            case Some(symbol) => 
+              List(String2Rhs(symbol.toString))
+            case None =>
+              List(Rhs(Nil))
           }
-          innerAcc.updated(key, innerAcc.getOrElse(key, List()) ++ value)
+        } else {
+          a match {
+          case Some(symbol) => {//symbol이 있을 때
+            val rhsSeqs = for(i <- 0 until n) yield {
+
+              val rhsSeq = symbol +: gamma.zipWithIndex.map { case (g, idx) => 
+                if (idx == 0) s"A$q$g$i"
+                else if (idx == gamma.size - 1) s"A${i+idx-1}$g$p"
+                else {
+                  s"A${i+idx-1}$g${i+idx}"
+                }
+              }.mkString(" ")
+              String2Rhs(rhsSeq)
+            }
+            rhsSeqs.toList
+          }
+          case None => //symbol이 없을 때 == epsilon 전이일 때
+            val rhsSeqs = for (i <- 0 until n) yield {
+              val rhsSeq = gamma.zipWithIndex.map { case (g, idx) => 
+                if (idx == 0) s"A$q$g$i"
+                else if (idx == gamma.size - 1) s"A${i+idx-1}$g$p"
+                else {
+                  s"A${i+idx-1}$g${i+idx}"
+                  
+                }
+              }.mkString(" ")
+              String2Rhs(rhsSeq)
+            }
+            rhsSeqs.toList
+          }
         }
+        innerAcc.updated(key, innerAcc.getOrElse(key, List()) ++ value)
+      }
     }
     println(rules)
     CFG(nonTerminals, pda.symbols, start, rules)
   }
 }
+
+/*HashMap(
+  A0X0 -> List(Rhs(List(a, A, 0, X, 0,  , A, 0, X, 0)), Rhs(List(a, A, 1, X, 0,  , A, 1, X, 0))), 
+  A1Z1 -> List(Rhs(List())), 
+  A0X1 -> List(Rhs(List(A, 0, X, 0)), Rhs(List(A, 1, X, 0))), 
+  A1X1 -> List(Rhs(List(b))), 
+  A0Z1 -> List(Rhs(List(A, 0, Z, 0)), Rhs(List(A, 1, Z, 0))), 
+  A0Z0 -> List(Rhs(List(a, A, 0, X, 0,  , A, 0, Z, 0)), Rhs(List(a, A, 1, X, 0,  , A, 1, Z, 0))), 
+  S -> List(Rhs(List(A, 0, Z, 0)), Rhs(List(A, 0, Z, 1))))*/ 
+/*HashMap(
+  A0X0 -> List(Rhs(List(a, A, 0, X, 0,  , A, 1, X, 0)), Rhs(List(a, A, 0, X, 1,  , A, 2, X, 0))), 
+  A1Z1 -> List(Rhs(List())), 
+  A0X1 -> List(Rhs(List(A, 0, X, 0)), Rhs(List(A, 0, X, 1))), 
+  A1X1 -> List(Rhs(List(b))), 
+  A0Z1 -> List(Rhs(List(A, 0, Z, 0)), Rhs(List(A, 0, Z, 1))), 
+  A0Z0 -> List(Rhs(List(a, A, 0, X, 0,  , A, 1, Z, 0)), 
+  Rhs(List(a, A, 0, X, 1,  , A, 2, Z, 0))), 
+  S -> List(Rhs(List(A, 0, Z, 0)), Rhs(List(A, 0, Z, 1))))*/ 
+/*HashMap(
+  A0X0 -> List(Rhs(List(a, A, 0, X, 0,  , A, 0, X, 0)), Rhs(List(a, A, 0, X, 1,  , A, 1, X, 0))), 
+  A1Z1 -> List(Rhs(List())), 
+  A0X1 -> List(Rhs(List(A, 0, X, 0)), Rhs(List(A, 0, X, 1))), 
+  A1X1 -> List(Rhs(List(b))), 
+  A0Z1 -> List(Rhs(List(A, 0, Z, 0)), Rhs(List(A, 0, Z, 1))), 
+  A0Z0 -> List(Rhs(List(a, A, 0, X, 0,  , A, 0, Z, 0)), Rhs(List(a, A, 0, X, 1,  , A, 1, Z, 0))), 
+  S -> List(Rhs(List(A, 0, Z, 0)), Rhs(List(A, 0, Z, 1))))  */

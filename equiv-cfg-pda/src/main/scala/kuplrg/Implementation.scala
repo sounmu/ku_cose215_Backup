@@ -148,20 +148,26 @@ object Implementation extends Template {
   def pdaes2cfg(pda: PDA): CFG = { // 입실론 <e>
 
     def String2Rhs(str: String): kuplrg.Rhs = { //대문자 소문자 비교로 Nt인지 Symbol인지
-      val seq: List[Nt | Symbol] = str.toList.map {
-        case c if c.isUpper => c.toString: Nt
-        case c => c: Symbol
+      val seq: List[Nt | Symbol] = str.split(" ").toList.map {
+        case s if s.forall(c => c.isUpper || c.isDigit) => s: Nt
+        case s => s.head: Symbol
       }
       Rhs(seq)
     }
     val n = pda.states.size
     //val firstNts: Set[Symbol] = pda.symbols
     //println(n)
-    val Nts: Set[String] = (for{ 
+    /*val Nts: Set[String] = (for{ 
       state1 <- pda.states
       state2 <- pda.states
       alphabet <- pda.alphabets
-    } yield s"A$state1$alphabet$state2").toSet
+    } yield s"A$state1$alphabet$state2").toSet*/
+
+    val Nts: Set[String] = (for {
+      ((q, a, x), set) <- pda.trans
+      (p, gamma) <- set
+    } yield s"A$q$x$p").toSet
+
     //println(Nts)
     val start: String = "S"
     val nonTerminals: Set[String] = (Nts ++ Set(start))
@@ -186,13 +192,13 @@ object Implementation extends Template {
           case Some(symbol) => {//symbol이 있을 때
             val rhsSeqs = for(i <- 0 until n) yield {
 
-              val rhsSeq = symbol +: gamma.zipWithIndex.map { case (g, idx) => 
+              val rhsSeq = (symbol.toString +: gamma.zipWithIndex.map { case (g, idx) => 
                 if (idx == 0) s"A$q$g$i"
                 else if (idx == gamma.size - 1) s"A${i+idx-1}$g$p"
                 else {
                   s"A${i+idx-1}$g${i+idx}"
                 }
-              }.mkString(" ")
+              }).mkString(" ")
               String2Rhs(rhsSeq)
             }
             rhsSeqs.toList
@@ -202,10 +208,7 @@ object Implementation extends Template {
               val rhsSeq = gamma.zipWithIndex.map { case (g, idx) => 
                 if (idx == 0) s"A$q$g$i"
                 else if (idx == gamma.size - 1) s"A${i+idx-1}$g$p"
-                else {
-                  s"A${i+idx-1}$g${i+idx}"
-                  
-                }
+                else s"A${i+idx-1}$g${i+idx}"
               }.mkString(" ")
               String2Rhs(rhsSeq)
             }
@@ -218,7 +221,7 @@ object Implementation extends Template {
     println(rules)
     CFG(nonTerminals, pda.symbols, start, rules)
   }
-}
+}// 앞으로 남은거 입실론 전이 넣기, A0Z1도 A0Z0하고 똑같게 하기.
 
 /*HashMap(
   A0X0 -> List(Rhs(List(a, A, 0, X, 0,  , A, 0, X, 0)), Rhs(List(a, A, 1, X, 0,  , A, 1, X, 0))), 
@@ -245,3 +248,21 @@ object Implementation extends Template {
   A0Z1 -> List(Rhs(List(A, 0, Z, 0)), Rhs(List(A, 0, Z, 1))), 
   A0Z0 -> List(Rhs(List(a, A, 0, X, 0,  , A, 0, Z, 0)), Rhs(List(a, A, 0, X, 1,  , A, 1, Z, 0))), 
   S -> List(Rhs(List(A, 0, Z, 0)), Rhs(List(A, 0, Z, 1))))  */
+/*HashMap(
+  A0X0 -> List(Rhs(List(a, A, A)), Rhs(List(a, A, A))), 
+  A1Z1 -> List(Rhs(List())), 
+  A0X1 -> List(Rhs(List(A)), Rhs(List(A))), 
+  A1X1 -> List(Rhs(List(b))), 
+  A0Z1 -> List(Rhs(List(A)), Rhs(List(A))), 
+  A0Z0 -> List(Rhs(List(a, A, A)), Rhs(List(a, A, A))), 
+  S -> List(Rhs(List(A)), Rhs(List(A))))
+ */
+/* 
+HashMap(
+  A0X0 -> List(Rhs(List(a, A0X0, A0X0)), Rhs(List(a, A0X1, A1X0))), 
+  A1Z1 -> List(Rhs(List())), 
+  A0X1 -> List(Rhs(List(A0X0)), Rhs(List(A0X1))), 
+  A1X1 -> List(Rhs(List(b))), 
+  A0Z1 -> List(Rhs(List(A0Z0)), Rhs(List(A0Z1))), 
+  A0Z0 -> List(Rhs(List(a, A0X0, A0Z0)), Rhs(List(a, A0X1, A1Z0))), 
+  S -> List(Rhs(List(A0Z0)), Rhs(List(A0Z1)))) */

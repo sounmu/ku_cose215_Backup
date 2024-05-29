@@ -145,6 +145,47 @@ object Implementation extends Template {
   }
 
   // Convert a PDA with empty stacks to a CFG
-  def pdaes2cfg(pda: PDA): CFG = ???
+  def pdaes2cfg(pda: PDA): CFG = { // 입실론 <e>
 
+    def String2Rhs(str: String): kuplrg.Rhs = { //대문자 소문자 비교로 Nt인지 Symbol인지
+      val seq: List[Nt | Symbol] = str.toList.map {
+        case c if c.isUpper => c.toString: Nt
+        case c => c: Symbol
+      }
+      Rhs(seq)
+    }
+    val n = pda.states.size
+    //val firstNts: Set[Symbol] = pda.symbols
+    //println(n)
+    val Nts: Set[String] = (for{ 
+      state1 <- pda.states
+      state2 <- pda.states
+      alphabet <- pda.alphabets
+    } yield s"A$state1$alphabet$state2").toSet
+    //println(Nts)
+    val start: String = "S"
+    val nonTerminals: Set[String] = (Nts ++ Set(start))
+    //println(nonTerminals)
+    val initialProduct: Map[Nt, List[Rhs]] = Map(
+      start -> pda.states.toList.map(num => String2Rhs(s"A0Z$num")) //S0Z0, S0Z1
+    )
+    //println(initialProduct)
+    //transition : Map[(Int, Option[Char], String), Set[(Int, List[String])]]
+    val rules: Map[Nt, List[Rhs]] = pda.trans.foldLeft(initialProduct) { case (acc, ((q, a, x), set)) =>
+      set.foldLeft(acc) { case (innerAcc, (p, gamma)) => //p는 Set안에 Int, gamma는 List[]
+        val key = s"A$q$x$p"
+        val value: List[Rhs] = a match {
+          case Some(symbol) => //symbol이 있을 때
+            val rhsSeq = symbol +: gamma.map(g => s"A$p$g$q").mkString(" ")
+            List(String2Rhs(rhsSeq))
+          case None => //symbol이 없을 때 == epsilon일 때
+            val rhsSeq = gamma.map(g => s"A$p$g$q").mkString(" ")
+            List(String2Rhs(rhsSeq))
+          }
+          innerAcc.updated(key, innerAcc.getOrElse(key, List()) ++ value)
+        }
+    }
+    println(rules)
+    CFG(nonTerminals, pda.symbols, start, rules)
+  }
 }

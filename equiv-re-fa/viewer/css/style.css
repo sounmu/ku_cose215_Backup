@@ -1,0 +1,223 @@
+/*!**************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./src/styles.scss ***!
+  \**************************************************************************************************************************************/
+body {
+  opacity: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+mjx-container {
+  font-size: 120% !important;
+}
+
+.nodeLabel mjx-container {
+  font-size: 140% !important;
+}
+
+.small mjx-container {
+  font-size: 110% !important;
+}
+
+.mermaid {
+  text-align: center;
+  display: block !important;
+  background: white !important;
+}
+
+.mermaid polygon {
+  fill: transparent !important;
+  stroke: transparent !important;
+}
+
+.mermaid circle {
+  fill: transparent !important;
+  stroke: black !important;
+  stroke-width: 2px !important;
+}
+
+.mermaid rect {
+  fill: transparent !important;
+  stroke: black !important;
+  stroke-width: 2px !important;
+}
+
+.mermaid path {
+  stroke: black !important;
+}
+
+.mermaid .marker {
+  fill: black !important;
+}
+
+.mermaid .edgeLabel {
+  background: white !important;
+}
+
+.mermaid span {
+  color: black !important;
+}
+
+.mermaid .selected circle,
+.mermaid .selected rect {
+  fill: #F5C2C1 !important;
+}
+
+table {
+  margin: auto;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+th {
+  border-bottom: 3px solid;
+}
+
+th:first-child,
+td:first-child {
+  text-align: right;
+  border-right: 3px solid;
+}
+
+th:not(:first-child),
+td:not(:first-child) {
+  text-align: center;
+  border-left: 1px solid;
+}
+
+th,
+td {
+  padding: 10px;
+}
+
+#error {
+  color: red;
+}
+
+#form {
+  font-family: monospace;
+}
+#form #hidden-wrapper {
+  position: absolute;
+  visibility: hidden;
+}
+#form #hidden-input,
+#form #word-input {
+  width: 50%;
+  height: 40px;
+}
+#form #hidden-input,
+#form #word-input,
+#form #word {
+  color: black;
+  font-size: 1rem;
+  border: 3px solid black;
+  margin: 0 auto;
+  padding: 8px 12px;
+  border-radius: 4px;
+  display: block;
+  border-radius: 4px;
+  resize: none;
+  overflow: hidden;
+}
+#form #word {
+  display: none;
+}
+#form #word p {
+  margin: 0;
+  float: left;
+}
+#form #word p.next {
+  margin: -1px;
+  border: 1px solid red;
+}
+#form #word p.next, #form #word p.remain {
+  color: gray;
+}
+#form .line {
+  display: flex;
+  width: 50%;
+  margin: 10px auto;
+}
+#form .line p {
+  margin: 0;
+  padding: 0.25rem;
+  line-height: 1.5rem;
+}
+#form .line #word {
+  display: flex;
+}
+#form .line #word p.active {
+  color: black;
+  border: 1px solid black;
+}
+#form .line #word p {
+  margin: 0;
+  padding: 0.25rem;
+  border: 1px solid lightgray;
+  color: lightgray;
+}
+#form .line #result {
+  font-weight: bold;
+}
+#form .line #result.pass {
+  color: green;
+}
+#form .line #result.fail {
+  color: red;
+}
+#form #buttons {
+  margin: 0 auto;
+  max-width: 500px;
+}
+#form svg {
+  margin-right: 1.5rem;
+}
+#form .buton {
+  position: relative;
+  border: 0;
+  font: 300 14px;
+  color: #FFFFFF;
+  padding: 10px 15px;
+  border-radius: 3px;
+  display: inline-block;
+  margin: 5px;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+#form .buton[disabled] {
+  background: #ddd;
+  pointer-events: none;
+}
+#form .buton > * {
+  position: relative;
+  z-index: 5;
+}
+#form .buton:hover:after {
+  left: 0;
+}
+#form .buton:after {
+  top: 0;
+  left: -100%;
+}
+#form .buton-blue {
+  background: -webkit-linear-gradient(left, #2a83be 40px, #3498db 0);
+}
+#form .buton-blue:after {
+  background-color: #2a83be;
+}
+#form .buton-red {
+  background: -webkit-linear-gradient(left, #c0392b 40px, #e74c3c 0);
+}
+#form .buton-red:after {
+  background-color: #c0392b;
+}
+#form .buton-green {
+  background: -webkit-linear-gradient(left, #27ae60 40px, #2ecc71 0);
+}
+#form .buton-green:after {
+  background-color: #27ae60;
+}
+
+/*# sourceMappingURL=style.css.map*/

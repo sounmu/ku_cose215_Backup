@@ -1,0 +1,127 @@
+[36mRun starting. Expected test count is: 0[0m
+[32mSpec:[0m
+[32msqsum(0, 0)[0m
+[32m- should be 0 (15 milliseconds)[0m
+[32msqsum(2, 3)[0m
+[32m- should be 13 (1 millisecond)[0m
+[32msqsum(-3, 4)[0m
+[32m- should be 25 (1 millisecond)[0m
+[32mconcat("Hello ", "World!")[0m
+[32m- should be "Hello World!" (0 milliseconds)[0m
+[32mconcat("COSE", "212")[0m
+[32m- should be "COSE212" (1 millisecond)[0m
+[32mconcat("COSE", "215")[0m
+[32m- should be "COSE215" (0 milliseconds)[0m
+[32msubN(3)(5)[0m
+[32m- should be 2 (1 millisecond)[0m
+[32msubN(4)(13)[0m
+[32m- should be 9 (0 milliseconds)[0m
+[32msubN(243)(-942)[0m
+[32m- should be -1185 (1 millisecond)[0m
+[32mtwice(((_: Int) => _.+(3)))(1)[0m
+[32m- should be 7 (0 milliseconds)[0m
+[32mtwice(subN(3))(10)[0m
+[32m- should be 4 (0 milliseconds)[0m
+[32mtwice(((_: Int) => _.*(10)))(42)[0m
+[32m- should be 4200 (1 millisecond)[0m
+[32mcompose(((_: Int) => _.+(3)), ((_: Int) => _.*(2)))(1)[0m
+[32m- should be 5 (1 millisecond)[0m
+[32mcompose(((_: Int) => _.*(10)), ((_: Int) => _.+(1)))(42)[0m
+[32m- should be 430 (0 milliseconds)[0m
+[32mcompose(subN(3), subN(2))(10)[0m
+[32m- should be 5 (0 milliseconds)[0m
+[32msumOnlyOdd(List[Int](2))[0m
+[32m- should be 0 (1 millisecond)[0m
+[32msumOnlyOdd(List[Int](1, 2, 3))[0m
+[32m- should be 4 (0 milliseconds)[0m
+[32msumOnlyOdd(List[Int](4, 2, 3, 7, 5))[0m
+[32m- should be 15 (1 millisecond)[0m
+[32mfoldWith(((_: Int, _: Int) => _.+(_)))(List[Int](1, 2, 3))[0m
+[32m- should be 6 (0 milliseconds)[0m
+[32mfoldWith(((_: Int, _: Int) => _.-(_)))(List[Int](5, 9, 2, 3))[0m
+[32m- should be -19 (0 milliseconds)[0m
+[32mfoldWith(((_: Int, _: Int) => _.*(2).+(_)))(List[Int](4, 7, 3, 2))[0m
+[32m- should be 68 (1 millisecond)[0m
+[32mtoSet(List[Int](1, 5, 2, 7, 4, 2, 4), 0)[0m
+[32m- should be Predef.Set[Int](1, 2, 4, 5, 7) (3 milliseconds)[0m
+[32mtoSet(List[Int](1, 5, 2, 7, 4, 2, 4), 2)[0m
+[32m- should be Predef.Set[Int](2, 4, 7) (0 milliseconds)[0m
+[32mtoSet(List[Int](1, 5, 2, 7, 4, 2, 4), 4)[0m
+[32m- should be Predef.Set[Int](2, 4) (0 milliseconds)[0m
+[32mgetOrZero(m, "Park")[0m
+[32m- should be 3 (0 milliseconds)[0m
+[32mgetOrZero(m, "Lee")[0m
+[32m- should be 0 (0 milliseconds)[0m
+[32mgetOrZero(m, "Kim")[0m
+[32m- should be 5 (0 milliseconds)[0m
+[32msetMinus(Predef.Set[Int](1, 2, 3), Predef.Set[Int](2, 3, 4))[0m
+[32m- should be Predef.Set[Int](1) (1 millisecond)[0m
+[32msetMinus(Predef.Set[Int](1, 2, 3), Predef.Set[Int](4, 5, 6))[0m
+[32m- should be Predef.Set[Int](1, 2, 3) (1 millisecond)[0m
+[32msetMinus(Predef.Set[Int](1, 2, 3), Predef.Set[Int](1, 2, 3, 4))[0m
+[32m- should be Predef.Set[Int]() (0 milliseconds)[0m
+[32mhas(8)(tree1)[0m
+[32m- should be true (1 millisecond)[0m
+[32mhas(7)(tree2)[0m
+[32m- should be false (0 milliseconds)[0m
+[32mhas(1)(tree3)[0m
+[32m- should be true (0 milliseconds)[0m
+[32mmaxDepthOf(8)(tree1)[0m
+[32m- should be Some[Int](0) (1 millisecond)[0m
+[32mmaxDepthOf(7)(tree2)[0m
+[32m- should be None (0 milliseconds)[0m
+[32mmaxDepthOf(1)(tree3)[0m
+[32m- should be Some[Int](3) (1 millisecond)[0m
+[32mmul(tree1)[0m
+[32m- should be 8 (0 milliseconds)[0m
+[32mmul(tree2)[0m
+[32m- should be 960 (0 milliseconds)[0m
+[32mmul(tree3)[0m
+[32m- should be 1680 (0 milliseconds)[0m
+[32mcountLeaves(tree1)[0m
+[32m- should be 1 (0 milliseconds)[0m
+[32mcountLeaves(tree2)[0m
+[32m- should be 3 (0 milliseconds)[0m
+[32mcountLeaves(tree3)[0m
+[32m- should be 4 (0 milliseconds)[0m
+[32mpostOrder(tree1)[0m
+[32m- should be List[Int](8) (0 milliseconds)[0m
+[32mpostOrder(tree2)[0m
+[32m- should be List[Int](5, 8, 3, 2, 4) (1 millisecond)[0m
+[32mpostOrder(tree3)[0m
+[32m- should be List[Int](2, 1, 8, 5, 1, 3, 7) (0 milliseconds)[0m
+[32mcountLiterals(be1)[0m
+[32m- should be 2 (0 milliseconds)[0m
+[32mcountLiterals(be2)[0m
+[32m- should be 4 (0 milliseconds)[0m
+[32mcountLiterals(be3)[0m
+[32m- should be 5 (0 milliseconds)[0m
+[32mcountNots(be1)[0m
+[32m- should be 0 (1 millisecond)[0m
+[32mcountNots(be2)[0m
+[32m- should be 2 (0 milliseconds)[0m
+[32mcountNots(be3)[0m
+[32m- should be 3 (0 milliseconds)[0m
+[32mdepth(be1)[0m
+[32m- should be 1 (0 milliseconds)[0m
+[32mdepth(be2)[0m
+[32m- should be 3 (0 milliseconds)[0m
+[32mdepth(be3)[0m
+[32m- should be 5 (1 millisecond)[0m
+[32meval(be1)[0m
+[32m- should be true (0 milliseconds)[0m
+[32meval(be2)[0m
+[32m- should be false (1 millisecond)[0m
+[32meval(be3)[0m
+[32m- should be true (0 milliseconds)[0m
+[32mgetString(be1)[0m
+[32m- should be "(true | false)" (0 milliseconds)[0m
+[32mgetString(be2)[0m
+[32m- should be "(!(true | false) & !(false | true))" (1 millisecond)[0m
+[32mgetString(be3)[0m
+[32m- should be "(!((false | !true) & false) & (true & !false))" (0 milliseconds)[0m
+[36mRun completed in 204 milliseconds.[0m
+[36mTotal number of tests run: 60[0m
+[36mSuites: completed 1, aborted 0[0m
+[36mTests: succeeded 60, failed 0, canceled 0, ignored 0, pending 0[0m
+[32mAll tests passed.[0m

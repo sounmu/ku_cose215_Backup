@@ -18,7 +18,7 @@ object Implementation extends Template {
     //println(pda.states.max)
     val newStartState = pda.states.max + 1
     val newFinalState = newStartState + 1
-    val newInitAlphabet: String = "z"
+    val newInitAlphabet: String = "z'"
 
     val emptyStackTrans = for {
       state <- pda.finalStates
@@ -155,13 +155,6 @@ object Implementation extends Template {
       Rhs(seq)
     }
     val n = pda.states.size
-    //val firstNts: Set[Symbol] = pda.symbols
-    //println(n)
-    /*val Nts: Set[String] = (for{ 
-      state1 <- pda.states
-      state2 <- pda.states
-      alphabet <- pda.alphabets
-    } yield s"A$state1$alphabet$state2").toSet*/
 
     val Nts: Set[String] = (for {
       ((q, a, x), set) <- pda.trans
@@ -172,136 +165,70 @@ object Implementation extends Template {
     val start: String = "S"
     val nonTerminals: Set[String] = (Nts ++ Set(start))
     //println(nonTerminals)
-    val initialProduct: Map[Nt, List[Rhs]] = Map(
-      start -> pda.states.toList.map(num => String2Rhs(s"A0Z$num")) //S0Z0, S0Z1
-    )
+    val initialProduct: Map[Nt, List[Rhs]] = (for {
+      q <- 0 until n
+      x <- pda.alphabets
+      p <- 0 until n
+    } yield s"A$q$x$p").map(key => key -> List[Rhs]()).toMap + (start -> pda.states.toList.map(num => String2Rhs(s"A0Z$num"))) //S0Z0, S0Z1
+
     //println(initialProduct)
     //transition : Map[(Int, Option[Char], String), Set[(Int, List[String])]]
     val rules: Map[Nt, List[Rhs]] = pda.trans.foldLeft(initialProduct) { case (acc, ((q, a, x), set)) =>
-      set.foldLeft(acc) { case (innerAcc, (p, gamma)) => //p는 Set안에 Int, gamma는 List[]
-        val key = s"A$q$x$p"
-
-        // 모든 경우를 처리하기 위해 두 가지 경우로 분리해서 처리
-        val valueSome: List[Rhs] = a match {
-          case Some(symbol) =>
-            if (gamma.isEmpty) {
-              List(String2Rhs(symbol.toString))
-            } else {
-              val rhsSeqs = for (i <- 0 until n) yield {
-                val rhsSeq = (symbol.toString +: gamma.zipWithIndex.map { case (g, idx) =>
-                  if (idx == 0) s"A$q$g$i"
-                  else if (idx == gamma.size - 1) s"A${i+idx-1}$g$p"
-                  else s"A${i+idx-1}$g${i+idx}"
-                }).mkString(" ")
-                String2Rhs(rhsSeq)
+      set.foldLeft(acc) { case (innerAcc, (p, gamma)) => 
+        val newRules = for {
+          i <- 0 until n
+          key = s"A$q$x$i"
+        } yield {
+          val valueSome: List[Rhs] = a match {
+            case Some(symbol) =>
+              if (gamma.isEmpty) {
+                List(String2Rhs(symbol.toString))
+              } else {
+                val rhsSeqs = for (j <- 0 until n) yield {
+                  val rhsSeq = (symbol.toString +: gamma.zipWithIndex.map { case (g, idx) =>
+                    if (idx == 0) s"A$p$g$j"
+                    else if (idx == gamma.size - 1) s"A${j+idx-1}$g$i"
+                    else s"A${j+idx-1}$g${j+idx}"
+                  }).mkString(" ")
+                  String2Rhs(rhsSeq)
+                }
+                rhsSeqs.toList
               }
-              rhsSeqs.toList
-            }
-          case None => List()
-      }
-
-        val valueNone: List[Rhs] = a match {
-          case None => 
-            if (gamma.isEmpty) {
-              List(Rhs(Nil))
-            } else {
-              val rhsSeqs = for (i <- 1 until n) yield {
-                val rhsSeq = gamma.zipWithIndex.map { case (g, idx) =>
-                  if (idx == 0) s"A$i$g$p"
-                  else if (idx == gamma.size - 1) s"A${i+idx-1}$g$p"
-                  else s"A${i+idx-1}$g${p}"
-                }.mkString(" ")
-                String2Rhs(rhsSeq)
-              }
-              rhsSeqs.toList
-            }
-          case Some(_) => List()
+            case None => List()
           }
-        val value = valueSome ++ valueNone
-        innerAcc.updated(key, innerAcc.getOrElse(key, List()) ++ value)
+
+          val valueNone: List[Rhs] = a match {
+            case None => 
+              if (gamma.isEmpty) {
+                List(Rhs(Nil))
+              } else {
+                val rhsSeqs = for (j <- 1 until n) yield {
+                  val rhsSeq = gamma.zipWithIndex.map { case (g, idx) =>
+                    if (idx == 0) s"A$j$g$i"
+                    else if (idx == gamma.size - 1) s"A${i+idx-1}$g$i"
+                    else s"A${i+idx-1}$g${i+idx}"
+                  }.mkString(" ")
+                  String2Rhs(rhsSeq)
+                }
+                rhsSeqs.toList
+              }
+            case Some(_) => List()
+          }
+          if (gamma.isEmpty) {
+            s"A$q$x$p" -> (valueSome ++ valueNone)
+          } else {
+            key -> (valueSome ++ valueNone)
+          }
+        } //p는 Set안에 Int, gamma는 List[]
+
+          newRules.foldLeft(innerAcc) { case (mapAcc, (newKey, newValue)) =>
+            mapAcc.updated(newKey, mapAcc.getOrElse(newKey, List()) ++ newValue)
+          }
       }
     }
-
-    println(rules)
+    
+   
+    //println(completeRules)
     CFG(nonTerminals, pda.symbols, start, rules)
   }
-}//  A0Z1도 A0Z0하고 똑같게 하기.
-
-/*HashMap(
-  A0X0 -> List(Rhs(List(a, A, 0, X, 0,  , A, 0, X, 0)), Rhs(List(a, A, 1, X, 0,  , A, 1, X, 0))), 
-  A1Z1 -> List(Rhs(List())), 
-  A0X1 -> List(Rhs(List(A, 0, X, 0)), Rhs(List(A, 1, X, 0))), 
-  A1X1 -> List(Rhs(List(b))), 
-  A0Z1 -> List(Rhs(List(A, 0, Z, 0)), Rhs(List(A, 1, Z, 0))), 
-  A0Z0 -> List(Rhs(List(a, A, 0, X, 0,  , A, 0, Z, 0)), Rhs(List(a, A, 1, X, 0,  , A, 1, Z, 0))), 
-  S -> List(Rhs(List(A, 0, Z, 0)), Rhs(List(A, 0, Z, 1))))*/ 
-/*HashMap(
-  A0X0 -> List(Rhs(List(a, A, 0, X, 0,  , A, 1, X, 0)), Rhs(List(a, A, 0, X, 1,  , A, 2, X, 0))), 
-  A1Z1 -> List(Rhs(List())), 
-  A0X1 -> List(Rhs(List(A, 0, X, 0)), Rhs(List(A, 0, X, 1))), 
-  A1X1 -> List(Rhs(List(b))), 
-  A0Z1 -> List(Rhs(List(A, 0, Z, 0)), Rhs(List(A, 0, Z, 1))), 
-  A0Z0 -> List(Rhs(List(a, A, 0, X, 0,  , A, 1, Z, 0)), 
-  Rhs(List(a, A, 0, X, 1,  , A, 2, Z, 0))), 
-  S -> List(Rhs(List(A, 0, Z, 0)), Rhs(List(A, 0, Z, 1))))*/ 
-/*HashMap(
-  A0X0 -> List(Rhs(List(a, A, 0, X, 0,  , A, 0, X, 0)), Rhs(List(a, A, 0, X, 1,  , A, 1, X, 0))), 
-  A1Z1 -> List(Rhs(List())), 
-  A0X1 -> List(Rhs(List(A, 0, X, 0)), Rhs(List(A, 0, X, 1))), 
-  A1X1 -> List(Rhs(List(b))), 
-  A0Z1 -> List(Rhs(List(A, 0, Z, 0)), Rhs(List(A, 0, Z, 1))), 
-  A0Z0 -> List(Rhs(List(a, A, 0, X, 0,  , A, 0, Z, 0)), Rhs(List(a, A, 0, X, 1,  , A, 1, Z, 0))), 
-  S -> List(Rhs(List(A, 0, Z, 0)), Rhs(List(A, 0, Z, 1))))  */
-/*HashMap(
-  A0X0 -> List(Rhs(List(a, A, A)), Rhs(List(a, A, A))), 
-  A1Z1 -> List(Rhs(List())), 
-  A0X1 -> List(Rhs(List(A)), Rhs(List(A))), 
-  A1X1 -> List(Rhs(List(b))), 
-  A0Z1 -> List(Rhs(List(A)), Rhs(List(A))), 
-  A0Z0 -> List(Rhs(List(a, A, A)), Rhs(List(a, A, A))), 
-  S -> List(Rhs(List(A)), Rhs(List(A))))
- */
-/* 
-HashMap(
-  A0X0 -> List(Rhs(List(a, A0X0, A0X0)), Rhs(List(a, A0X1, A1X0))), 
-  A1Z1 -> List(Rhs(List())), 
-  A0X1 -> List(Rhs(List(A0X0)), Rhs(List(A0X1))), 
-  A1X1 -> List(Rhs(List(b))), 
-  A0Z1 -> List(Rhs(List(A0Z0)), Rhs(List(A0Z1))), 
-  A0Z0 -> List(Rhs(List(a, A0X0, A0Z0)), Rhs(List(a, A0X1, A1Z0))), 
-  S -> List(Rhs(List(A0Z0)), Rhs(List(A0Z1)))) */
-/*
-HashMap(
-  A0X0 -> List(Rhs(List(a, A0X0, A0X0)), Rhs(List(a, A0X1, A1X0)), Rhs(List(A0X0, A0X0)), Rhs(List(A0X1, A1X0))), 
-  A1Z1 -> List(Rhs(List())), A0X1 -> List(Rhs(List(A0X0)), Rhs(List(A0X1))), 
-  A1X1 -> List(Rhs(List(b)), Rhs(List(b)), Rhs(List())),
-  A0Z1 -> List(Rhs(List(A0Z0)), Rhs(List(A0Z1))), 
-  A0Z0 -> List(Rhs(List(a, A0X0, A0Z0)), Rhs(List(a, A0X1, A1Z0)), Rhs(List(A0X0, A0Z0)), Rhs(List(A0X1, A1Z0))), 
-  S -> List(Rhs(List(A0Z0)), Rhs(List(A0Z1))))  */
-/*
-HashMap(
-  A0X0 -> List(Rhs(List(a, A0X0, A0X0)), Rhs(List(a, A0X1, A1X0))), 
-  A1Z1 -> List(Rhs(List())), 
-  A0X1 -> List(Rhs(List(A0X0)), Rhs(List(A0X1))), 
-  A1X1 -> List(Rhs(List(b))), 
-  A0Z1 -> List(Rhs(List(A0Z0)), Rhs(List(A0Z1))),
-  A0Z0 -> List(Rhs(List(a, A0X0, A0Z0)), Rhs(List(a, A0X1, A1Z0))), 
-  S -> List(Rhs(List(A0Z0)), Rhs(List(A0Z1))))  */
-/*HashMap(
-  A0X0 -> List(Rhs(List(S, A0X0, A0X0)), Rhs(List(S, A0X1, A1X0)), Rhs(List(A1X0, A1X0))), 
-  A1Z1 -> List(Rhs(List(N)), Rhs(List())), 
-  A0X1 -> List(Rhs(List(N, A0X0)), Rhs(List(N, A0X1)), Rhs(List(A1X1))), 
-  A1X1 -> List(Rhs(List(S)), Rhs(List())), 
-  A0Z1 -> List(Rhs(List(N, A0Z0)), Rhs(List(N, A0Z1)), Rhs(List(A1Z1))), 
-  A0Z0 -> List(Rhs(List(S, A0X0, A0Z0)), Rhs(List(S, A0X1, A1Z0)), Rhs(List(A1X0, A1Z0))), 
-  S -> List(Rhs(List(A0Z0)), Rhs(List(A0Z1))))
-  */
-/*
-HashMap(
-  A0X0 -> List(Rhs(List(a, A0X0, A0X0)), Rhs(List(a, A0X1, A1X0))), 
-  A1Z1 -> List(Rhs(List())), 
-  A0X1 -> List(Rhs(List(A1X1))), 
-  A1X1 -> List(Rhs(List(b))), 
-  A0Z1 -> List(Rhs(List(A1Z1))), 
-  A0Z0 -> List(Rhs(List(a, A0X0, A0Z0)), Rhs(List(a, A0X1, A1Z0))), 
-  S -> List(Rhs(  */
+}

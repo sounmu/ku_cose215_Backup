@@ -1,0 +1,903 @@
+2024.03.16 16:46:47 INFO  Started: Metals version 1.2.2 in folders '/Users/sounmu/Documents/scala-tutorial' for client Visual Studio Code 1.87.2.
+16:46:50.684 [pool-1-thread-4] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+16:46:50.685 [pool-1-thread-4] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+16:46:50.685 [pool-1-thread-4] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+16:46:50.686 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+16:46:50.686 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc ...
+16:46:50.686 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+16:46:50.686 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+16:46:50.686 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc ...
+16:46:50.686 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/Users/sounmu/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+16:46:50.687 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+16:46:50.687 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+16:46:50.687 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+16:46:50.687 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+16:46:50.687 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+16:46:50.687 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+16:46:50.688 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+16:46:50.688 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+16:46:50.689 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+16:46:50.689 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+16:46:50.689 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+16:46:50.737 [pool-1-thread-4] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/Users/sounmu/Documents/scala-tutorial/.metals/metals (H2 2.2)
+16:46:50.737 [pool-1-thread-4] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+16:46:50.737 [pool-1-thread-4] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+16:46:50.737 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+16:46:50.738 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+16:46:50.739 [pool-1-thread-4] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+16:46:50.739 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+16:46:50.739 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+16:46:50.742 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+16:46:50.743 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+16:46:50.746 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+16:46:50.746 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+16:46:50.746 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+16:46:50.746 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+16:46:50.746 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+16:46:50.746 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+16:46:50.746 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+16:46:50.746 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+16:46:50.746 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+16:46:50.746 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+16:46:50.747 [pool-1-thread-4] INFO org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
+16:46:50.748 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.005s)
+16:46:50.749 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+16:46:50.750 [pool-1-thread-4] INFO org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+16:46:50.751 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.parser.Parser -- Parsing  ...
+16:46:50.753 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 1: CREATE TABLE IF NOT EXISTS "PUBLIC"."flyway_schema_history" (
+    "installed_rank" INT NOT NULL,
+    "version" VARCHAR(50),
+    "description" VARCHAR(200) NOT NULL,
+    "type" VARCHAR(20) NOT NULL,
+    "script" VARCHAR(1000) NOT NULL,
+    "checksum" INT,
+    "installed_by" VARCHAR(100) NOT NULL,
+    "installed_on" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "execution_time" INT NOT NULL,
+    "success" BOOLEAN NOT NULL,
+    CONSTRAINT "flyway_schema_history_pk" PRIMARY KEY ("installed_rank")
+) AS SELECT -1, NULL, '<< Flyway Schema History table created >>', 'TABLE', '', NULL, 'SA', CURRENT_TIMESTAMP, 0, TRUE
+16:46:50.753 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 14: CREATE INDEX "PUBLIC"."flyway_schema_history_s_idx" ON "PUBLIC"."flyway_schema_history" ("success")
+16:46:50.753 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: CREATE TABLE IF NOT EXISTS "PUBLIC"."flyway_schema_history" (
+    "installed_rank" INT NOT NULL,
+    "version" VARCHAR(50),
+    "description" VARCHAR(200) NOT NULL,
+    "type" VARCHAR(20) NOT NULL,
+    "script" VARCHAR(1000) NOT NULL,
+    "checksum" INT,
+    "installed_by" VARCHAR(100) NOT NULL,
+    "installed_on" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "execution_time" INT NOT NULL,
+    "success" BOOLEAN NOT NULL,
+    CONSTRAINT "flyway_schema_history_pk" PRIMARY KEY ("installed_rank")
+) AS SELECT -1, NULL, '<< Flyway Schema History table created >>', 'TABLE', '', NULL, 'SA', CURRENT_TIMESTAMP, 0, TRUE
+16:46:50.755 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+16:46:50.755 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: CREATE INDEX "PUBLIC"."flyway_schema_history_s_idx" ON "PUBLIC"."flyway_schema_history" ("success")
+16:46:50.756 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+16:46:50.756 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Created Schema History table "PUBLIC"."flyway_schema_history"
+16:46:50.758 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": << Empty Schema >>
+16:46:50.758 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.parser.Parser -- Parsing V1__Create_tables.sql ...
+16:46:50.759 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 4: -- The relationship between library dependency sources under .metals/readonly/**
+-- and build targets they belong to. Required to know what classpath to use
+-- for compiling dependency sources.
+create table dependency_source(
+  text_document_uri varchar primary key,
+  build_target_uri varchar not null
+)
+16:46:50.759 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 12: -- The relationship between library dependency sources under .metals/readonly/**
+-- and worksheets they belong to. Required to know what classpath to use
+-- for compiling dependency sources.
+create table worksheet_dependency_source(
+  text_document_uri varchar primary key,
+  worksheet_uri varchar not null
+)
+16:46:50.759 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 19: -- The relationship between what library dependency sources under .metals/readonly/**
+-- map to which build targets.
+create table sbt_digest(
+  md5 varchar,
+  status tinyint not null,
+  when_recorded timestamp
+)
+16:46:50.759 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 27: -- Which window/showMessage and window/showMessageRequest dialogues have been dismissed
+-- by the user via "Don't show again" or closed by clicking on "x".
+create table dismissed_notification(
+  id int,
+  when_dismissed timestamp,
+  when_expires timestamp
+)
+16:46:50.759 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 34: -- The choice of build tool when multiple build tool files are found in a workspace
+create table chosen_build_tool(
+  build_tool varchar primary key
+)
+16:46:50.760 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.command.DbMigrate -- Starting migration of schema "PUBLIC" to version "1 - Create tables" ...
+16:46:50.760 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "PUBLIC" to version "1 - Create tables"
+16:46:50.760 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- The relationship between library dependency sources under .metals/readonly/**
+-- and build targets they belong to. Required to know what classpath to use
+-- for compiling dependency sources.
+create table dependency_source(
+  text_document_uri varchar primary key,
+  build_target_uri varchar not null
+)
+16:46:50.761 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+16:46:50.761 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- The relationship between library dependency sources under .metals/readonly/**
+-- and worksheets they belong to. Required to know what classpath to use
+-- for compiling dependency sources.
+create table worksheet_dependency_source(
+  text_document_uri varchar primary key,
+  worksheet_uri varchar not null
+)
+16:46:50.761 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+16:46:50.761 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- The relationship between what library dependency sources under .metals/readonly/**
+-- map to which build targets.
+create table sbt_digest(
+  md5 varchar,
+  status tinyint not null,
+  when_recorded timestamp
+)
+16:46:50.761 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+16:46:50.762 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- Which window/showMessage and window/showMessageRequest dialogues have been dismissed
+-- by the user via "Don't show again" or closed by clicking on "x".
+create table dismissed_notification(
+  id int,
+  when_dismissed timestamp,
+  when_expires timestamp
+)
+16:46:50.762 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+16:46:50.762 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- The choice of build tool when multiple build tool files are found in a workspace
+create table chosen_build_tool(
+  build_tool varchar primary key
+)
+16:46:50.762 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+16:46:50.762 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.command.DbMigrate -- Successfully completed migration of schema "PUBLIC" to version "1 - Create tables"
+16:46:50.763 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Schema History table "PUBLIC"."flyway_schema_history" successfully updated to reflect changes
+16:46:50.765 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.parser.Parser -- Parsing V2__Server_discovery.sql ...
+16:46:50.766 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 4: -- For each unique combination of installed build servers we select one server.
+-- The md5 checksum is computed from the names of the installed build servers, and
+-- the selected server is the server which the user chose for this workspace.
+create table chosen_build_server(
+  md5 varchar primary key,
+  selected_server varchar,
+  when_recorded timestamp
+)
+16:46:50.766 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.command.DbMigrate -- Starting migration of schema "PUBLIC" to version "2 - Server discovery" ...
+16:46:50.766 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "PUBLIC" to version "2 - Server discovery"
+16:46:50.766 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- For each unique combination of installed build servers we select one server.
+-- The md5 checksum is computed from the names of the installed build servers, and
+-- the selected server is the server which the user chose for this workspace.
+create table chosen_build_server(
+  md5 varchar primary key,
+  selected_server varchar,
+  when_recorded timestamp
+)
+16:46:50.766 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+16:46:50.766 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.command.DbMigrate -- Successfully completed migration of schema "PUBLIC" to version "2 - Server discovery"
+16:46:50.767 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Schema History table "PUBLIC"."flyway_schema_history" successfully updated to reflect changes
+16:46:50.768 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.parser.Parser -- Parsing V3__Jar_symbols.sql ...
+16:46:50.768 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 2: -- Indexed jars, the MD5 digest of path, modified time and size as key
+create table indexed_jar(
+  id int auto_increment unique,
+  md5 varchar primary key
+)
+16:46:50.769 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 7: -- Top Level Symbols per jar, allow for multiple jars with same symbols and paths
+create table toplevel_symbol(
+  symbol varchar not null,
+  path varchar not null,
+  jar int,
+  foreign key (jar) references indexed_jar (id) on delete cascade,
+  primary key (jar, path, symbol)
+)
+16:46:50.769 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 15: -- Create index to speedup lookup of jar symbols
+create index toplevel_symbol_jar on toplevel_symbol(jar)
+16:46:50.769 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.command.DbMigrate -- Starting migration of schema "PUBLIC" to version "3 - Jar symbols" ...
+16:46:50.769 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "PUBLIC" to version "3 - Jar symbols"
+16:46:50.769 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- Indexed jars, the MD5 digest of path, modified time and size as key
+create table indexed_jar(
+  id int auto_increment unique,
+  md5 varchar primary key
+)
+16:46:50.771 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+16:46:50.771 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- Top Level Symbols per jar, allow for multiple jars with same symbols and paths
+create table toplevel_symbol(
+  symbol varchar not null,
+  path varchar not null,
+  jar int,
+  foreign key (jar) references indexed_jar (id) on delete cascade,
+  primary key (jar, path, symbol)
+)
+16:46:50.773 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+16:46:50.773 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- Create index to speedup lookup of jar symbols
+create index toplevel_symbol_jar on toplevel_symbol(jar)
+16:46:50.773 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+16:46:50.773 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.command.DbMigrate -- Successfully completed migration of schema "PUBLIC" to version "3 - Jar symbols"
+16:46:50.774 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Schema History table "PUBLIC"."flyway_schema_history" successfully updated to reflect changes
+16:46:50.775 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.parser.Parser -- Parsing V4__Fingerprints.sql ...
+16:46:50.775 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 2: -- Fingerprints saved between invocations
+create table fingerprints(
+  path varchar not null,
+  text varchar not null,
+  md5 varchar not null,
+  id int auto_increment unique
+)
+16:46:50.775 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.command.DbMigrate -- Starting migration of schema "PUBLIC" to version "4 - Fingerprints" ...
+16:46:50.776 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "PUBLIC" to version "4 - Fingerprints"
+16:46:50.776 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- Fingerprints saved between invocations
+create table fingerprints(
+  path varchar not null,
+  text varchar not null,
+  md5 varchar not null,
+  id int auto_increment unique
+)
+16:46:50.776 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+16:46:50.776 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.command.DbMigrate -- Successfully completed migration of schema "PUBLIC" to version "4 - Fingerprints"
+16:46:50.777 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Schema History table "PUBLIC"."flyway_schema_history" successfully updated to reflect changes
+16:46:50.779 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbMigrate -- Successfully applied 4 migrations to schema "PUBLIC", now at version v4 (execution time 00:00.006s)
+16:46:50.785 [pool-1-thread-4] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 39 of 104M
+2024.03.16 16:46:50 WARN  Build server is not auto-connectable.
+2024.03.16 16:47:40 INFO  no build target found for /Users/sounmu/Documents/scala-tutorial/src/test/scala/kuplrg/Spec.scala. Using presentation compiler with project's scala-library version: 3.3.1
+2024.03.16 16:47:41 INFO  time: code lens generation in 2.69s
+2024.03.16 16:50:46 WARN  no build target for: /Users/sounmu/Documents/scala-tutorial/build.sbt
+2024.03.16 16:50:47 INFO  running '/Users/sounmu/Library/Application Support/Coursier/bin/sbt -Dbloop.export-jar-classifiers=sources bloopInstall'
+2024.03.16 16:50:48 WARN  no build target for: /Users/sounmu/Documents/scala-tutorial/project/project/metals.sbt
+2024.03.16 16:50:48 WARN  no build target for: /Users/sounmu/Documents/scala-tutorial/project/metals.sbt
+2024.03.16 16:50:49 INFO  [info] welcome to sbt 1.9.9 (Homebrew Java 11.0.21)
+2024.03.16 16:50:50 INFO  [info] loading settings for project scala-tutorial-build-build-build from metals.sbt ...
+2024.03.16 16:50:50 INFO  [info] loading project definition from /Users/sounmu/Documents/scala-tutorial/project/project/project
+2024.03.16 16:50:51 INFO  [info] loading settings for project scala-tutorial-build-build from metals.sbt ...
+2024.03.16 16:50:51 INFO  [info] loading project definition from /Users/sounmu/Documents/scala-tutorial/project/project
+2024.03.16 16:50:51 INFO  [success] Generated .bloop/scala-tutorial-build-build.json
+2024.03.16 16:50:51 INFO  [success] Total time: 1 s, completed 2024. 3. 16. 오후 4:50:52
+2024.03.16 16:50:51 INFO  [info] loading settings for project scala-tutorial-build from metals.sbt,plugins.sbt ...
+2024.03.16 16:50:51 INFO  [info] loading project definition from /Users/sounmu/Documents/scala-tutorial/project
+2024.03.16 16:50:52 INFO  [success] Generated .bloop/scala-tutorial-build.json
+2024.03.16 16:50:52 INFO  [success] Total time: 0 s, completed 2024. 3. 16. 오후 4:50:53
+2024.03.16 16:50:52 INFO  [info] loading settings for project root from build.sbt ...
+2024.03.16 16:50:52 INFO  [info] set current project to scala-tutorial (in build file:/Users/sounmu/Documents/scala-tutorial/)
+2024.03.16 16:50:54 INFO  [success] Generated .bloop/root-test.json
+2024.03.16 16:50:54 INFO  [success] Generated .bloop/root.json
+2024.03.16 16:50:54 INFO  [success] Total time: 0 s, completed 2024. 3. 16. 오후 4:50:54
+2024.03.16 16:50:54 INFO  time: ran 'sbt bloopInstall' in 6.24s
+2024.03.16 16:50:54 INFO  Attempting to connect to the build server...
+2024.03.16 16:50:54 INFO  Bloop uses /opt/homebrew/Cellar/openjdk@11/11.0.21/libexec/openjdk.jdk/Contents/Home defined at /Users/sounmu/.bloop/bloop.json
+2024.03.16 16:50:55 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/sounmu/Documents/scala-tutorial/.metals/bsp.trace.json or /Users/sounmu/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.16 16:50:55 INFO  Attempting to connect to the build server...
+2024.03.16 16:50:55 INFO  Bloop uses /opt/homebrew/Cellar/openjdk@11/11.0.21/libexec/openjdk.jdk/Contents/Home defined at /Users/sounmu/.bloop/bloop.json
+2024.03.16 16:50:55 INFO  Attempting to connect to the build server...
+2024.03.16 16:50:55 INFO  Bloop uses /opt/homebrew/Cellar/openjdk@11/11.0.21/libexec/openjdk.jdk/Contents/Home defined at /Users/sounmu/.bloop/bloop.json
+2024.03.16 16:50:55 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/sounmu/Documents/scala-tutorial/project/project/.metals/bsp.trace.json or /Users/sounmu/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.16 16:50:55 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/sounmu/Documents/scala-tutorial/project/.metals/bsp.trace.json or /Users/sounmu/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.16 16:50:55 INFO  time: Connected to build server in 1.48s
+2024.03.16 16:50:55 INFO  Connected to Build server: Bloop v1.5.15
+2024.03.16 16:50:58 INFO  time: indexed workspace in 3.21s
+2024.03.16 16:50:59 INFO  compiling root (3 scala sources)
+2024.03.16 16:51:01 INFO  compiling root-test (2 scala sources)
+2024.03.16 16:51:01 INFO  time: compiled root in 3.14s
+2024.03.16 16:51:03 INFO  time: compiled root-test in 1.68s
+2024.03.16 16:51:03 INFO  skipping build import with status 'Installed'
+2024.03.16 16:51:18 INFO  compiling root (1 scala source)
+2024.03.16 16:51:18 INFO  time: compiled root in 0.19s
+2024.03.16 16:51:20 INFO  compiling root (1 scala source)
+2024.03.16 16:51:20 INFO  time: compiled root in 0.11s
+2024.03.16 16:51:24 WARN  Invalid text document uri received from build server: file:///Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Spec.scala
+2024.03.16 16:58:05 INFO  compiling root (1 scala source)
+2024.03.16 16:58:05 INFO  time: compiled root in 0.97s
+2024.03.16 16:59:27 INFO  compiling root (1 scala source)
+2024.03.16 16:59:27 INFO  time: compiled root in 0.12s
+2024.03.16 17:02:56 INFO  compiling root (1 scala source)
+2024.03.16 17:02:56 INFO  time: compiled root in 0.14s
+2024.03.16 17:03:11 INFO  compiling root (1 scala source)
+2024.03.16 17:03:11 INFO  time: compiled root in 0.11s
+2024.03.16 17:08:18 INFO  compiling root (1 scala source)
+2024.03.16 17:08:18 INFO  time: compiled root in 73ms
+2024.03.16 17:08:34 INFO  compiling root (1 scala source)
+2024.03.16 17:08:34 INFO  time: compiled root in 63ms
+2024.03.16 17:09:40 INFO  compiling root (1 scala source)
+2024.03.16 17:09:40 INFO  time: compiled root in 0.11s
+2024.03.16 17:11:20 INFO  compiling root (1 scala source)
+2024.03.16 17:11:20 INFO  time: compiled root in 36ms
+2024.03.16 17:11:20 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.16 17:11:59 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.16 17:12:01 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.16 17:12:02 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.16 17:12:03 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.16 17:12:06 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.16 17:12:06 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+3월 16, 2024 5:13:04 오후 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+경고: Unmatched cancel notification for request id 1021
+2024.03.16 17:13:07 INFO  compiling root (1 scala source)
+2024.03.16 17:13:07 INFO  time: compiled root in 0.11s
+2024.03.16 17:13:51 INFO  compiling root (1 scala source)
+2024.03.16 17:13:51 INFO  time: compiled root in 0.1s
+2024.03.16 17:18:19 INFO  compiling root (1 scala source)
+2024.03.16 17:18:19 INFO  time: compiled root in 0.11s
+2024.03.16 17:29:15 INFO  compiling root (1 scala source)
+2024.03.16 17:29:15 INFO  time: compiled root in 0.11s
+2024.03.16 17:36:06 INFO  compiling root (1 scala source)
+2024.03.16 17:36:06 INFO  Deduplicating compilation of root from bsp client 'Metals 1.2.2' (since 45m 10.775s)
+2024.03.16 17:36:06 INFO  compiling root (1 scala source)
+2024.03.16 17:36:06 INFO  time: compiled root in 81ms
+2024.03.16 17:39:08 INFO  compiling root (1 scala source)
+2024.03.16 17:39:08 INFO  time: compiled root in 57ms
+2024.03.16 17:39:08 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.16 17:39:29 INFO  compiling root (1 scala source)
+2024.03.16 17:39:29 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.16 17:39:29 INFO  time: compiled root in 0.11s
+2024.03.16 17:39:30 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.16 17:39:40 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.16 17:39:42 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.16 17:39:42 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.16 17:39:42 INFO  compiling root (1 scala source)
+2024.03.16 17:39:42 INFO  time: compiled root in 46ms
+2024.03.16 17:39:43 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.16 17:39:55 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.16 17:39:56 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.16 17:40:32 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.16 17:40:59 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.16 17:41:03 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.16 17:41:04 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.16 17:41:07 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.16 17:41:07 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.16 17:41:08 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.16 17:41:09 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.16 17:41:11 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.16 17:41:11 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.16 17:41:13 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.16 17:41:13 INFO  compiling root (1 scala source)
+2024.03.16 17:41:13 INFO  time: compiled root in 0.12s
+2024.03.16 17:42:20 INFO  compiling root (1 scala source)
+2024.03.16 17:42:20 INFO  time: compiled root in 0.11s
+3월 16, 2024 5:51:10 오후 scala.meta.internal.pc.CompilerSearchVisitor visitClassfile
+경고: cannot resolve reference to type u.type.Traverser
+the classfile defining the type might be missing from the classpath
+dotty.tools.dotc.core.MissingType: cannot resolve reference to type u.type.Traverser
+the classfile defining the type might be missing from the classpath
+
+3월 16, 2024 5:51:54 오후 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+경고: Unmatched cancel notification for request id 2385
+2024.03.16 17:52:06 INFO  compiling root (1 scala source)
+2024.03.16 17:52:06 INFO  time: compiled root in 0.18s
+3월 16, 2024 5:52:13 오후 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+경고: Unmatched cancel notification for request id 2507
+3월 16, 2024 5:55:21 오후 scala.meta.internal.mtags.SymbolIndexBucket addMtagsSourceFile
+경고: Error indexing /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Spec.scala
+java.nio.file.NoSuchFileException: /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Spec.scala
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:219)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:371)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:422)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3206)
+	at scala.meta.internal.io.PlatformFileIO$.slurp(PlatformFileIO.scala:45)
+	at scala.meta.internal.io.FileIO$.slurp(FileIO.scala:24)
+	at scala.meta.internal.mtags.ScalametaCommonEnrichments$XtensionAbsolutePath.toInput(ScalametaCommonEnrichments.scala:425)
+	at scala.meta.internal.mtags.Mtags.index(Mtags.scala:67)
+	at scala.meta.internal.mtags.Mtags.allSymbols(Mtags.scala:21)
+	at scala.meta.internal.mtags.SymbolIndexBucket.allSymbols(SymbolIndexBucket.scala:281)
+	at scala.meta.internal.mtags.SymbolIndexBucket.addMtagsSourceFile(SymbolIndexBucket.scala:292)
+	at scala.meta.internal.mtags.SymbolIndexBucket.$anonfun$query0$7(SymbolIndexBucket.scala:223)
+	at scala.meta.internal.mtags.SymbolIndexBucket.$anonfun$query0$7$adapted(SymbolIndexBucket.scala:218)
+	at scala.collection.IterableOnceOps.foreach(IterableOnce.scala:576)
+	at scala.collection.IterableOnceOps.foreach$(IterableOnce.scala:574)
+	at scala.collection.AbstractIterable.foreach(Iterable.scala:933)
+	at scala.collection.IterableOps$WithFilter.foreach(Iterable.scala:903)
+	at scala.meta.internal.mtags.SymbolIndexBucket.query0(SymbolIndexBucket.scala:218)
+	at scala.meta.internal.mtags.SymbolIndexBucket.query(SymbolIndexBucket.scala:180)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.$anonfun$findSymbolDefinition$1(OnDemandSymbolIndex.scala:141)
+	at scala.collection.immutable.List.flatMap(List.scala:293)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.findSymbolDefinition(OnDemandSymbolIndex.scala:141)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.definition(OnDemandSymbolIndex.scala:48)
+	at scala.meta.internal.metals.Docstrings.indexSymbol(Docstrings.scala:118)
+	at scala.meta.internal.metals.Docstrings.documentation(Docstrings.scala:44)
+	at scala.meta.internal.metals.MetalsSymbolSearch.documentation(MetalsSymbolSearch.scala:43)
+	at scala.meta.internal.mtags.MtagsEnrichments$.symbolDocumentation(MtagsEnrichments.scala:252)
+	at scala.meta.internal.pc.CompletionItemResolver$.resolve(CompletionItemResolver.scala:27)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.completionItemResolve$$anonfun$1(ScalaPresentationCompiler.scala:215)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:156)
+	at scala.meta.internal.pc.CompilerAccess.withNonInterruptableCompiler$$anonfun$1(CompilerAccess.scala:142)
+	at scala.meta.internal.pc.CompilerAccess.onCompilerJobQueue$$anonfun$1(CompilerAccess.scala:245)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:152)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+3월 16, 2024 5:55:21 오후 scala.meta.internal.mtags.SymbolIndexBucket addMtagsSourceFile
+경고: Error indexing /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Spec.scala
+java.nio.file.NoSuchFileException: /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Spec.scala
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:219)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:371)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:422)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3206)
+	at scala.meta.internal.io.PlatformFileIO$.slurp(PlatformFileIO.scala:45)
+	at scala.meta.internal.io.FileIO$.slurp(FileIO.scala:24)
+	at scala.meta.internal.mtags.ScalametaCommonEnrichments$XtensionAbsolutePath.toInput(ScalametaCommonEnrichments.scala:425)
+	at scala.meta.internal.mtags.Mtags.index(Mtags.scala:67)
+	at scala.meta.internal.mtags.Mtags.allSymbols(Mtags.scala:21)
+	at scala.meta.internal.mtags.SymbolIndexBucket.allSymbols(SymbolIndexBucket.scala:281)
+	at scala.meta.internal.mtags.SymbolIndexBucket.addMtagsSourceFile(SymbolIndexBucket.scala:292)
+	at scala.meta.internal.mtags.SymbolIndexBucket.addMtagsSourceFile(SymbolIndexBucket.scala:303)
+	at scala.meta.internal.mtags.SymbolIndexBucket.$anonfun$query0$7(SymbolIndexBucket.scala:223)
+	at scala.meta.internal.mtags.SymbolIndexBucket.$anonfun$query0$7$adapted(SymbolIndexBucket.scala:218)
+	at scala.collection.IterableOnceOps.foreach(IterableOnce.scala:576)
+	at scala.collection.IterableOnceOps.foreach$(IterableOnce.scala:574)
+	at scala.collection.AbstractIterable.foreach(Iterable.scala:933)
+	at scala.collection.IterableOps$WithFilter.foreach(Iterable.scala:903)
+	at scala.meta.internal.mtags.SymbolIndexBucket.query0(SymbolIndexBucket.scala:218)
+	at scala.meta.internal.mtags.SymbolIndexBucket.query(SymbolIndexBucket.scala:180)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.$anonfun$findSymbolDefinition$1(OnDemandSymbolIndex.scala:141)
+	at scala.collection.immutable.List.flatMap(List.scala:293)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.findSymbolDefinition(OnDemandSymbolIndex.scala:141)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.definition(OnDemandSymbolIndex.scala:48)
+	at scala.meta.internal.metals.Docstrings.indexSymbol(Docstrings.scala:118)
+	at scala.meta.internal.metals.Docstrings.documentation(Docstrings.scala:44)
+	at scala.meta.internal.metals.MetalsSymbolSearch.documentation(MetalsSymbolSearch.scala:43)
+	at scala.meta.internal.mtags.MtagsEnrichments$.symbolDocumentation(MtagsEnrichments.scala:252)
+	at scala.meta.internal.pc.CompletionItemResolver$.resolve(CompletionItemResolver.scala:27)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.completionItemResolve$$anonfun$1(ScalaPresentationCompiler.scala:215)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:156)
+	at scala.meta.internal.pc.CompilerAccess.withNonInterruptableCompiler$$anonfun$1(CompilerAccess.scala:142)
+	at scala.meta.internal.pc.CompilerAccess.onCompilerJobQueue$$anonfun$1(CompilerAccess.scala:245)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:152)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2024.03.16 17:55:22 INFO  compiling root-test (1 scala source)
+2024.03.16 17:55:22 INFO  time: compiled root-test in 0.22s
+2024.03.16 17:56:29 INFO  compiling root-test (1 scala source)
+2024.03.16 17:56:29 INFO  time: compiled root-test in 0.2s
+2024.03.16 17:58:38 INFO  skipping build import with status 'Installed'
+2024.03.16 18:01:55 INFO  skipping build import with status 'Installed'
+2024.03.16 18:05:42 INFO  skipping build import with status 'Installed'
+3월 16, 2024 6:08:45 오후 scala.meta.internal.pc.CompilerAccess handleError
+심각: A severe compiler error occurred, full details of the error can be found in the error report /Users/sounmu/Documents/scala-tutorial/.metals/.reports/metals-full/2024-03-16/r_compiler-error_(root)_18-08-45-560.md
+2024.03.16 18:09:09 INFO  compiling root (1 scala source)
+2024.03.16 18:09:09 INFO  time: compiled root in 0.15s
+3월 17, 2024 12:05:57 오후 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+경고: Unmatched cancel notification for request id 3634
+3월 17, 2024 12:07:47 오후 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+경고: Unmatched cancel notification for request id 4386
+2024.03.17 12:08:26 INFO  compiling root (1 scala source)
+2024.03.17 12:08:26 INFO  time: compiled root in 0.19s
+2024.03.17 12:11:24 INFO  compiling root (1 scala source)
+2024.03.17 12:11:24 INFO  time: compiled root in 56ms
+2024.03.17 12:12:15 INFO  compiling root (1 scala source)
+2024.03.17 12:12:15 INFO  time: compiled root in 0.15s
+2024.03.17 12:12:39 INFO  compiling root (1 scala source)
+2024.03.17 12:12:39 INFO  time: compiled root in 0.13s
+2024.03.17 12:16:15 INFO  compiling root (1 scala source)
+2024.03.17 12:16:15 INFO  time: compiled root in 0.12s
+2024.03.17 12:19:22 INFO  compiling root (1 scala source)
+2024.03.17 12:19:22 INFO  time: compiled root in 61ms
+2024.03.17 12:19:40 INFO  compiling root (1 scala source)
+2024.03.17 12:19:40 INFO  time: compiled root in 55ms
+2024.03.17 12:19:42 INFO  compiling root (1 scala source)
+2024.03.17 12:19:42 INFO  time: compiled root in 61ms
+2024.03.17 12:20:15 INFO  compiling root (1 scala source)
+2024.03.17 12:20:15 INFO  time: compiled root in 0.11s
+2024.03.17 12:21:58 INFO  compiling root (1 scala source)
+2024.03.17 12:21:58 INFO  time: compiled root in 0.13s
+2024.03.17 12:22:29 INFO  compiling root (1 scala source)
+2024.03.17 12:22:29 INFO  time: compiled root in 0.12s
+3월 17, 2024 12:27:53 오후 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+경고: Unmatched cancel notification for request id 6179
+2024.03.17 12:28:01 INFO  compiling root (1 scala source)
+2024.03.17 12:28:01 INFO  time: compiled root in 0.14s
+3월 17, 2024 12:28:06 오후 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+경고: Unmatched cancel notification for request id 6253
+2024.03.17 12:28:10 INFO  compiling root (1 scala source)
+2024.03.17 12:28:10 INFO  time: compiled root in 0.12s
+2024.03.17 12:28:29 INFO  compiling root (1 scala source)
+2024.03.17 12:28:29 INFO  time: compiled root in 53ms
+2024.03.17 12:28:36 INFO  compiling root (1 scala source)
+2024.03.17 12:28:36 INFO  time: compiled root in 49ms
+2024.03.17 12:28:39 INFO  compiling root (1 scala source)
+2024.03.17 12:28:39 INFO  time: compiled root in 0.12s
+2024.03.17 12:28:53 INFO  compiling root (1 scala source)
+2024.03.17 12:28:53 INFO  time: compiled root in 0.12s
+2024.03.17 12:28:58 INFO  compiling root (1 scala source)
+2024.03.17 12:28:58 INFO  time: compiled root in 0.12s
+2024.03.17 12:29:23 INFO  compiling root (1 scala source)
+2024.03.17 12:29:23 INFO  time: compiled root in 0.12s
+2024.03.17 12:29:42 INFO  compiling root (1 scala source)
+2024.03.17 12:29:42 INFO  time: compiled root in 0.13s
+2024.03.17 12:30:50 INFO  compiling root (1 scala source)
+2024.03.17 12:30:50 INFO  time: compiled root in 0.25s
+2024.03.17 12:32:09 INFO  compiling root (1 scala source)
+2024.03.17 12:32:09 INFO  time: compiled root in 0.12s
+2024.03.17 12:32:23 INFO  compiling root (1 scala source)
+2024.03.17 12:32:23 INFO  time: compiled root in 0.12s
+2024.03.17 12:35:17 INFO  compiling root (1 scala source)
+2024.03.17 12:35:17 INFO  time: compiled root in 51ms
+2024.03.17 12:35:27 INFO  compiling root (1 scala source)
+2024.03.17 12:35:27 INFO  time: compiled root in 0.14s
+3월 17, 2024 12:36:57 오후 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+경고: Unmatched cancel notification for request id 7183
+2024.03.17 12:37:40 INFO  compiling root (1 scala source)
+2024.03.17 12:37:40 INFO  time: compiled root in 52ms
+2024.03.17 12:37:40 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:37:43 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:37:43 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:37:45 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:37:46 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:37:47 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:37:49 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:37:50 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:37:50 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:37:52 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:37:53 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:37:55 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:37:56 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:37:57 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:37:57 INFO  compiling root (1 scala source)
+2024.03.17 12:37:57 INFO  time: compiled root in 0.13s
+3월 17, 2024 12:38:18 오후 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+경고: Unmatched cancel notification for request id 7915
+2024.03.17 12:38:19 INFO  compiling root (1 scala source)
+2024.03.17 12:38:19 INFO  time: compiled root in 0.12s
+2024.03.17 12:38:26 INFO  compiling root (1 scala source)
+2024.03.17 12:38:26 INFO  time: compiled root in 46ms
+2024.03.17 12:38:26 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:39:18 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:39:19 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:39:20 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:39:20 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:39:23 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:39:24 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:39:29 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:39:30 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:39:33 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:39:34 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:39:35 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:39:37 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:39:39 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:39:41 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:39:42 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:39:47 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:39:48 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:39:48 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:39:50 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:39:51 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:39:52 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:39:54 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:39:56 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:39:57 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:39:59 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:39:59 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:40:00 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:40:01 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:40:03 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:40:03 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:40:07 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:40:07 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:40:09 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:40:10 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:40:11 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:40:12 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:40:14 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:40:15 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:40:18 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:40:20 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:40:20 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:40:23 INFO  compiling root (1 scala source)
+2024.03.17 12:40:23 INFO  time: compiled root in 48ms
+2024.03.17 12:40:23 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:40:31 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:40:31 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:40:31 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:40:31 INFO  compiling root (1 scala source)
+2024.03.17 12:40:31 INFO  time: compiled root in 0.13s
+2024.03.17 12:40:38 INFO  compiling root (1 scala source)
+2024.03.17 12:40:38 INFO  time: compiled root in 0.13s
+2024.03.17 12:40:51 INFO  compiling root (1 scala source)
+2024.03.17 12:40:51 INFO  time: compiled root in 0.13s
+2024.03.17 12:40:58 INFO  compiling root (1 scala source)
+2024.03.17 12:40:58 INFO  time: compiled root in 45ms
+2024.03.17 12:40:59 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:41:09 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:41:12 INFO  compiling root (1 scala source)
+2024.03.17 12:41:12 INFO  time: compiled root in 52ms
+2024.03.17 12:41:12 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:41:16 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:41:17 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:41:17 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:41:20 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:41:20 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:41:22 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:41:25 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:41:27 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:41:27 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:41:27 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:41:27 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:41:27 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:41:27 INFO  compiling root (1 scala source)
+2024.03.17 12:41:27 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:41:27 WARN  Could not load snapshot text for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.17 12:41:27 INFO  time: compiled root in 0.12s
+2024.03.17 12:41:50 INFO  compiling root (1 scala source)
+2024.03.17 12:41:50 INFO  time: compiled root in 0.15s
+2024.03.17 12:42:26 INFO  compiling root (1 scala source)
+2024.03.17 12:42:26 INFO  time: compiled root in 0.12s
+2024.03.17 12:42:36 INFO  compiling root (1 scala source)
+2024.03.17 12:42:36 INFO  time: compiled root in 0.13s
+2024.03.17 12:43:08 INFO  Shutting down server
+2024.03.17 12:43:08 INFO  shutting down Metals
+2024.03.17 12:43:08 INFO  Shut down connection with build server.
+2024.03.17 12:43:08 INFO  Shut down connection with build server.
+2024.03.17 12:43:08 INFO  Shut down connection with build server.
+2024.03.17 12:43:08 INFO  Exiting server
+2024.03.18 13:59:06 INFO  Started: Metals version 1.2.2 in folders '/Users/sounmu/Documents/scala-tutorial' for client Visual Studio Code 1.87.2.
+13:59:06.924 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+13:59:06.925 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+13:59:06.925 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+13:59:06.926 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+13:59:06.926 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc ...
+13:59:06.926 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+13:59:06.926 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+13:59:06.926 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc ...
+13:59:06.926 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/Users/sounmu/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+13:59:06.927 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+13:59:06.927 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+13:59:06.927 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+13:59:06.927 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+13:59:06.927 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+13:59:06.927 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+13:59:06.928 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+13:59:06.928 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+13:59:06.928 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+13:59:06.928 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+13:59:06.928 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+13:59:06.981 [pool-1-thread-1] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/Users/sounmu/Documents/scala-tutorial/.metals/metals (H2 2.2)
+13:59:06.981 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+13:59:06.981 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+13:59:06.981 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+13:59:06.981 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+13:59:06.983 [pool-1-thread-1] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+13:59:06.983 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+13:59:06.983 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+13:59:06.986 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+13:59:06.987 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+13:59:06.990 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+13:59:06.990 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+13:59:06.990 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+13:59:06.990 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+13:59:06.990 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+13:59:06.990 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+13:59:06.990 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+13:59:06.990 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+13:59:06.990 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+13:59:06.990 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+13:59:06.993 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.007s)
+13:59:06.994 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+13:59:06.996 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": 4
+13:59:06.997 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Schema "PUBLIC" is up to date. No migration necessary.
+13:59:07.002 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 26 of 104M
+2024.03.18 13:59:07 INFO  skipping build import with status 'Installed'
+2024.03.18 13:59:07 INFO  Attempting to connect to the build server...
+2024.03.18 13:59:07 INFO  Bloop uses /opt/homebrew/Cellar/openjdk@11/11.0.21/libexec/openjdk.jdk/Contents/Home defined at /Users/sounmu/.bloop/bloop.json
+2024.03.18 13:59:07 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/sounmu/Documents/scala-tutorial/.metals/bsp.trace.json or /Users/sounmu/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.18 13:59:07 INFO  Attempting to connect to the build server...
+2024.03.18 13:59:07 INFO  Bloop uses /opt/homebrew/Cellar/openjdk@11/11.0.21/libexec/openjdk.jdk/Contents/Home defined at /Users/sounmu/.bloop/bloop.json
+2024.03.18 13:59:07 INFO  Attempting to connect to the build server...
+2024.03.18 13:59:07 INFO  Bloop uses /opt/homebrew/Cellar/openjdk@11/11.0.21/libexec/openjdk.jdk/Contents/Home defined at /Users/sounmu/.bloop/bloop.json
+2024.03.18 13:59:07 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/sounmu/Documents/scala-tutorial/project/project/.metals/bsp.trace.json or /Users/sounmu/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.18 13:59:07 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/sounmu/Documents/scala-tutorial/project/.metals/bsp.trace.json or /Users/sounmu/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.18 13:59:07 INFO  time: Connected to build server in 0.87s
+2024.03.18 13:59:07 INFO  Connected to Build server: Bloop v1.5.15
+2024.03.18 13:59:10 INFO  no build target found for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala. Using presentation compiler with project's scala-library version: 3.3.1
+2024.03.18 13:59:13 INFO  time: indexed workspace in 2.03s
+2024.03.19 13:47:13 INFO  Shutting down server
+2024.03.19 13:47:13 INFO  shutting down Metals
+2024.03.19 13:47:13 INFO  Shut down connection with build server.
+2024.03.19 13:47:13 INFO  Shut down connection with build server.
+2024.03.19 13:47:13 INFO  Shut down connection with build server.
+2024.03.19 13:47:13 INFO  Exiting server
+2024.03.20 14:29:45 INFO  Started: Metals version 1.2.2 in folders '/Users/sounmu/Documents/scala-tutorial' for client Visual Studio Code 1.87.2.
+14:29:45.865 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+14:29:45.866 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+14:29:45.866 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+14:29:45.867 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+14:29:45.867 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc ...
+14:29:45.867 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+14:29:45.867 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+14:29:45.867 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc ...
+14:29:45.867 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/Users/sounmu/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+14:29:45.868 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+14:29:45.868 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+14:29:45.868 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+14:29:45.868 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+14:29:45.868 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+14:29:45.868 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+14:29:45.869 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:29:45.869 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+14:29:45.870 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+14:29:45.870 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+14:29:45.870 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+14:29:45.919 [pool-1-thread-1] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/Users/sounmu/Documents/scala-tutorial/.metals/metals (H2 2.2)
+14:29:45.919 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+14:29:45.919 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+14:29:45.919 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+14:29:45.919 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+14:29:45.921 [pool-1-thread-1] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+14:29:45.921 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+14:29:45.921 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:29:45.923 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+14:29:45.925 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:29:45.928 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:29:45.928 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+14:29:45.928 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+14:29:45.928 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+14:29:45.928 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+14:29:45.928 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:29:45.928 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+14:29:45.928 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+14:29:45.928 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+14:29:45.928 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+14:29:45.932 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.008s)
+14:29:45.933 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+14:29:45.935 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": 4
+14:29:45.937 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Schema "PUBLIC" is up to date. No migration necessary.
+14:29:45.943 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 26 of 104M
+2024.03.20 14:29:46 INFO  skipping build import with status 'Installed'
+2024.03.20 14:29:46 INFO  Attempting to connect to the build server...
+2024.03.20 14:29:46 INFO  Bloop uses /opt/homebrew/Cellar/openjdk@11/11.0.21/libexec/openjdk.jdk/Contents/Home defined at /Users/sounmu/.bloop/bloop.json
+2024.03.20 14:29:46 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/sounmu/Documents/scala-tutorial/.metals/bsp.trace.json or /Users/sounmu/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.20 14:29:46 INFO  Attempting to connect to the build server...
+2024.03.20 14:29:46 INFO  Bloop uses /opt/homebrew/Cellar/openjdk@11/11.0.21/libexec/openjdk.jdk/Contents/Home defined at /Users/sounmu/.bloop/bloop.json
+2024.03.20 14:29:46 INFO  Attempting to connect to the build server...
+2024.03.20 14:29:46 INFO  Bloop uses /opt/homebrew/Cellar/openjdk@11/11.0.21/libexec/openjdk.jdk/Contents/Home defined at /Users/sounmu/.bloop/bloop.json
+2024.03.20 14:29:46 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/sounmu/Documents/scala-tutorial/project/.metals/bsp.trace.json or /Users/sounmu/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.20 14:29:46 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/sounmu/Documents/scala-tutorial/project/project/.metals/bsp.trace.json or /Users/sounmu/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.20 14:29:46 INFO  time: Connected to build server in 0.65s
+2024.03.20 14:29:46 INFO  Connected to Build server: Bloop v1.5.15
+2024.03.20 14:29:50 INFO  no build target found for /Users/sounmu/Documents/scala-tutorial/src/main/scala/kuplrg/Implementation.scala. Using presentation compiler with project's scala-library version: 3.3.1
+2024.03.20 14:29:51 INFO  time: indexed workspace in 1.62s
+2024.03.20 14:30:56 INFO  Shutting down server
+2024.03.20 14:30:56 INFO  shutting down Metals
+2024.03.20 14:30:56 INFO  Shut down connection with build server.
+2024.03.20 14:30:56 INFO  Shut down connection with build server.
+2024.03.20 14:30:56 INFO  Shut down connection with build server.
+2024.03.20 14:30:56 INFO  Exiting server
+2024.03.20 14:34:24 INFO  Started: Metals version 1.2.2 in folders '/Users/sounmu/Documents/COSE215/scala-tutorial' for client Visual Studio Code 1.87.2.
+14:34:25.103 [pool-1-thread-4] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+14:34:25.104 [pool-1-thread-4] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+14:34:25.104 [pool-1-thread-4] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+14:34:25.106 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+14:34:25.106 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc ...
+14:34:25.106 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+14:34:25.106 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+14:34:25.106 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc ...
+14:34:25.106 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/Users/sounmu/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+14:34:25.107 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+14:34:25.107 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+14:34:25.107 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+14:34:25.107 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+14:34:25.107 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+14:34:25.107 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+14:34:25.108 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:34:25.108 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+14:34:25.108 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+14:34:25.108 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+14:34:25.108 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+14:34:25.160 [pool-1-thread-4] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/Users/sounmu/Documents/COSE215/scala-tutorial/.metals/metals (H2 2.2)
+14:34:25.160 [pool-1-thread-4] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+14:34:25.160 [pool-1-thread-4] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+14:34:25.161 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+14:34:25.161 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+14:34:25.162 [pool-1-thread-4] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+14:34:25.162 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+14:34:25.162 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:34:25.165 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+14:34:25.167 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:34:25.170 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:34:25.170 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+14:34:25.170 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+14:34:25.170 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+14:34:25.170 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+14:34:25.170 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+14:34:25.170 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+14:34:25.171 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+14:34:25.171 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+14:34:25.171 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+14:34:25.175 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.009s)
+14:34:25.177 [pool-1-thread-4] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+14:34:25.180 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": 4
+14:34:25.181 [pool-1-thread-4] INFO org.flywaydb.core.internal.command.DbMigrate -- Schema "PUBLIC" is up to date. No migration necessary.
+14:34:25.192 [pool-1-thread-4] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 78 of 104M
+2024.03.20 14:34:25 INFO  Attempting to connect to the build server...
+2024.03.20 14:34:25 INFO  Bloop uses /opt/homebrew/Cellar/openjdk@11/11.0.21/libexec/openjdk.jdk/Contents/Home defined at /Users/sounmu/.bloop/bloop.json
+2024.03.20 14:34:25 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/sounmu/Documents/COSE215/scala-tutorial/.metals/bsp.trace.json or /Users/sounmu/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.20 14:34:25 INFO  Attempting to connect to the build server...
+2024.03.20 14:34:25 INFO  Bloop uses /opt/homebrew/Cellar/openjdk@11/11.0.21/libexec/openjdk.jdk/Contents/Home defined at /Users/sounmu/.bloop/bloop.json
+2024.03.20 14:34:25 INFO  Attempting to connect to the build server...
+2024.03.20 14:34:25 INFO  Bloop uses /opt/homebrew/Cellar/openjdk@11/11.0.21/libexec/openjdk.jdk/Contents/Home defined at /Users/sounmu/.bloop/bloop.json
+2024.03.20 14:34:25 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/sounmu/Documents/COSE215/scala-tutorial/project/project/.metals/bsp.trace.json or /Users/sounmu/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.20 14:34:25 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/sounmu/Documents/COSE215/scala-tutorial/project/.metals/bsp.trace.json or /Users/sounmu/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.20 14:34:25 INFO  time: Connected to build server in 0.53s
+2024.03.20 14:34:25 INFO  Connected to Build server: Bloop v1.5.15
+2024.03.20 14:34:27 INFO  no build target found for /Users/sounmu/Documents/COSE215/scala-tutorial/src/main/scala/kuplrg/Implementation.scala. Using presentation compiler with project's scala-library version: 3.3.1
+2024.03.20 14:34:29 INFO  time: indexed workspace in 1.31s
+2024.03.20 14:34:29 WARN  no build target for: /Users/sounmu/Documents/COSE215/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.20 14:34:29 INFO  no build target found for /Users/sounmu/Documents/COSE215/scala-tutorial/src/main/scala/kuplrg/Implementation.scala. Using presentation compiler with project's scala-library version: 3.3.1
+2024.03.20 14:34:30 INFO  time: code lens generation in 1.12s
+2024.03.20 14:34:30 INFO  time: code lens generation in 1.12s
+2024.03.20 14:34:37 WARN  no build target for: /Users/sounmu/Documents/COSE215/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.20 15:05:45 INFO  Shutting down server
+2024.03.20 15:05:45 INFO  shutting down Metals
+2024.03.20 15:05:45 INFO  Shut down connection with build server.
+2024.03.20 15:05:45 INFO  Shut down connection with build server.
+2024.03.20 15:05:45 INFO  Shut down connection with build server.
+2024.03.20 15:05:45 INFO  Exiting server
+2024.03.27 13:33:18 INFO  Started: Metals version 1.2.2 in folders '/Users/sounmu/Documents/COSE215/scala-tutorial' for client Visual Studio Code 1.87.2.
+13:33:19.038 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+13:33:19.039 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+13:33:19.039 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+13:33:19.039 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+13:33:19.039 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc ...
+13:33:19.039 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+13:33:19.039 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+13:33:19.039 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc ...
+13:33:19.040 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/Users/sounmu/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+13:33:19.040 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+13:33:19.040 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+13:33:19.040 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+13:33:19.041 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+13:33:19.041 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+13:33:19.041 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+13:33:19.042 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+13:33:19.042 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+13:33:19.042 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+13:33:19.042 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+13:33:19.042 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+13:33:19.093 [pool-1-thread-1] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/Users/sounmu/Documents/COSE215/scala-tutorial/.metals/metals (H2 2.2)
+13:33:19.093 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+13:33:19.093 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+13:33:19.094 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+13:33:19.094 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+13:33:19.095 [pool-1-thread-1] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+13:33:19.096 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+13:33:19.096 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+13:33:19.098 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+13:33:19.099 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+13:33:19.102 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+13:33:19.102 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+13:33:19.102 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+13:33:19.102 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+13:33:19.102 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+13:33:19.103 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+13:33:19.103 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+13:33:19.103 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+13:33:19.103 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+13:33:19.103 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+13:33:19.107 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.008s)
+13:33:19.107 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+13:33:19.109 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": 4
+13:33:19.111 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Schema "PUBLIC" is up to date. No migration necessary.
+13:33:19.117 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 26 of 104M
+2024.03.27 13:33:19 INFO  skipping build import with status 'Installed'
+2024.03.27 13:33:19 INFO  Attempting to connect to the build server...
+2024.03.27 13:33:19 INFO  Bloop uses /opt/homebrew/Cellar/openjdk@11/11.0.21/libexec/openjdk.jdk/Contents/Home defined at /Users/sounmu/.bloop/bloop.json
+2024.03.27 13:33:20 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/sounmu/Documents/COSE215/scala-tutorial/.metals/bsp.trace.json or /Users/sounmu/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.27 13:33:20 INFO  Attempting to connect to the build server...
+2024.03.27 13:33:20 INFO  Bloop uses /opt/homebrew/Cellar/openjdk@11/11.0.21/libexec/openjdk.jdk/Contents/Home defined at /Users/sounmu/.bloop/bloop.json
+2024.03.27 13:33:20 INFO  Attempting to connect to the build server...
+2024.03.27 13:33:20 INFO  Bloop uses /opt/homebrew/Cellar/openjdk@11/11.0.21/libexec/openjdk.jdk/Contents/Home defined at /Users/sounmu/.bloop/bloop.json
+2024.03.27 13:33:20 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/sounmu/Documents/COSE215/scala-tutorial/project/project/.metals/bsp.trace.json or /Users/sounmu/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.27 13:33:19 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/sounmu/Documents/COSE215/scala-tutorial/project/.metals/bsp.trace.json or /Users/sounmu/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.03.27 13:33:19 INFO  time: Connected to build server in 0.97s
+2024.03.27 13:33:19 INFO  Connected to Build server: Bloop v1.5.15
+2024.03.27 13:33:23 INFO  no build target found for /Users/sounmu/Documents/COSE215/scala-tutorial/src/main/scala/kuplrg/Implementation.scala. Using presentation compiler with project's scala-library version: 3.3.1
+2024.03.27 13:33:25 INFO  no build target found for /Users/sounmu/Documents/COSE215/scala-tutorial/src/main/scala/kuplrg/Implementation.scala. Using presentation compiler with project's scala-library version: 3.3.1
+2024.03.27 13:33:25 INFO  time: indexed workspace in 1.75s
+2024.03.27 13:33:25 WARN  no build target for: /Users/sounmu/Documents/COSE215/scala-tutorial/src/main/scala/kuplrg/Implementation.scala
+2024.03.27 13:33:25 WARN  no build target for: /Users/sounmu/Documents/COSE215/scala-tutorial/src/test/scala/kuplrg/Spec.scala
+2024.03.27 13:33:26 INFO  time: code lens generation in 1.15s
+2024.03.27 13:33:26 INFO  time: code lens generation in 1.15s
+2024.03.27 13:33:47 INFO  Shutting down server
+2024.03.27 13:33:47 INFO  shutting down Metals
+2024.03.27 13:33:47 INFO  Shut down connection with build server.
+2024.03.27 13:33:47 INFO  Shut down connection with build server.
+2024.03.27 13:33:47 INFO  Shut down connection with build server.
+2024.03.27 13:33:47 INFO  Exiting server

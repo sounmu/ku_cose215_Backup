@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuite hostname="sounmu-MacBookPro" name="kuplrg.Spec" tests="60" errors="0" failures="0" skipped="0" time="0.038" timestamp="2024-03-25T13:24:47">
+          <properties>
+      <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/><property name="java.specification.version" value="11"/><property name="sun.cpu.isalist" value=""/><property name="sun.jnu.encoding" value="UTF-8"/><property name="sun.arch.data.model" value="64"/><property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/><property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk@11/11.0.21/libexec/openjdk.jdk/Contents/Home/lib"/><property name="sun.java.command" value="/Users/sounmu/Library/Caches/Coursier/arc/https/github.com/sbt/sbt/releases/download/v1.9.9/sbt-1.9.9.zip/sbt/bin/sbt-launch.jar"/><property name="jdk.debug" value="release"/><property name="java.specification.vendor" value="Oracle Corporation"/><property name="java.version.date" value="2023-10-17"/><property name="java.home" value="/opt/homebrew/Cellar/openjdk@11/11.0.21/libexec/openjdk.jdk/Contents/Home"/><property name="file.separator" value="/"/><property name="java.vm.compressedOopsMode" value="Zero based"/><property name="line.separator" value="
+"/><property name="java.specification.name" value="Java Platform API Specification"/><property name="java.vm.specification.vendor" value="Oracle Corporation"/><property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/><property name="java.runtime.version" value="11.0.21+0"/><property name="user.name" value="sounmu"/><property name="log4j.ignoreTCL" value="true"/><property name="file.encoding" value="UTF-8"/><property name="java.vendor.version" value="Homebrew"/><property name="java.io.tmpdir" value="/var/folders/jc/qhbbcxzj1jx53qk6pbwnvm780000gn/T/"/><property name="java.version" value="11.0.21"/><property name="java.vm.specification.name" value="Java Virtual Machine Specification"/><property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/><property name="sun.os.patch.level" value="unknown"/><property name="java.library.path" value="/Users/sounmu/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/><property name="java.vendor" value="Homebrew"/><property name="java.specification.maintenance.version" value="2"/><property name="scala.ext.dirs" value="/Users/sounmu/.sbt/1.0/java9-rt-ext-homebrew_11_0_21"/><property name="sun.io.unicode.encoding" value="UnicodeBig"/><property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/><property name="gopherProxySet" value="false"/><property name="java.class.path" value="/Users/sounmu/Library/Caches/Coursier/arc/https/github.com/sbt/sbt/releases/download/v1.9.9/sbt-1.9.9.zip/sbt/bin/sbt-launch.jar"/><property name="java.vm.vendor" value="Homebrew"/><property name="jline.shutdownhook" value="false"/><property name="user.timezone" value="Asia/Seoul"/><property name="os.name" value="Mac OS X"/><property name="java.vm.specification.version" value="11"/><property name="sun.java.launcher" value="SUN_STANDARD"/><property name="user.country" value="KR"/><property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/><property name="sun.cpu.endian" value="little"/><property name="user.home" value="/Users/sounmu"/><property name="user.language" value="ko"/><property name="sbt.script" value="/Users/sounmu/Library/Caches/Coursier/arc/https/github.com/sbt/sbt/releases/download/v1.9.9/sbt-1.9.9.zip/sbt/bin/sbt"/><property name="sbt.ipcsocket.tmpdir" value="/var/folders/jc/qhbbcxzj1jx53qk6pbwnvm780000gn/T/.sbt56cc71ba/ipcsocket"/><property name="swoval.tmpdir" value="/var/folders/jc/qhbbcxzj1jx53qk6pbwnvm780000gn/T/.sbt56cc71ba/swoval"/><property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/><property name="jline.esc.timeout" value="0"/><property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/><property name="path.separator" value=":"/><property name="os.version" value="14.4"/><property name="jna.nosys" value="true"/><property name="java.runtime.name" value="OpenJDK Runtime Environment"/><property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/><property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/><property name="user.dir" value="/Users/sounmu/Documents/COSE215/scala-tutorial"/><property name="os.arch" value="aarch64"/><property name="java.vm.info" value="mixed mode"/><property name="java.vm.version" value="11.0.21+0"/><property name="java.class.version" value="55.0"/>
+    </properties>
+          <testcase classname="kuplrg.Spec" name="sqsum(0, 0) should be 0" time="0.015">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="sqsum(2, 3) should be 13" time="0.001">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="sqsum(-3, 4) should be 25" time="0.001">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="concat(&quot;Hello &quot;, &quot;World!&quot;) should be &quot;Hello World!&quot;" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="concat(&quot;COSE&quot;, &quot;212&quot;) should be &quot;COSE212&quot;" time="0.001">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="concat(&quot;COSE&quot;, &quot;215&quot;) should be &quot;COSE215&quot;" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="subN(3)(5) should be 2" time="0.001">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="subN(4)(13) should be 9" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="subN(243)(-942) should be -1185" time="0.001">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="twice(((_: Int) =&gt; _.+(3)))(1) should be 7" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="twice(subN(3))(10) should be 4" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="twice(((_: Int) =&gt; _.*(10)))(42) should be 4200" time="0.001">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="compose(((_: Int) =&gt; _.+(3)), ((_: Int) =&gt; _.*(2)))(1) should be 5" time="0.001">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="compose(((_: Int) =&gt; _.*(10)), ((_: Int) =&gt; _.+(1)))(42) should be 430" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="compose(subN(3), subN(2))(10) should be 5" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="sumOnlyOdd(List[Int](2)) should be 0" time="0.001">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="sumOnlyOdd(List[Int](1, 2, 3)) should be 4" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="sumOnlyOdd(List[Int](4, 2, 3, 7, 5)) should be 15" time="0.001">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="foldWith(((_: Int, _: Int) =&gt; _.+(_)))(List[Int](1, 2, 3)) should be 6" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="foldWith(((_: Int, _: Int) =&gt; _.-(_)))(List[Int](5, 9, 2, 3)) should be -19" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="foldWith(((_: Int, _: Int) =&gt; _.*(2).+(_)))(List[Int](4, 7, 3, 2)) should be 68" time="0.001">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="toSet(List[Int](1, 5, 2, 7, 4, 2, 4), 0) should be Predef.Set[Int](1, 2, 4, 5, 7)" time="0.003">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="toSet(List[Int](1, 5, 2, 7, 4, 2, 4), 2) should be Predef.Set[Int](2, 4, 7)" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="toSet(List[Int](1, 5, 2, 7, 4, 2, 4), 4) should be Predef.Set[Int](2, 4)" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="getOrZero(m, &quot;Park&quot;) should be 3" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="getOrZero(m, &quot;Lee&quot;) should be 0" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="getOrZero(m, &quot;Kim&quot;) should be 5" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="setMinus(Predef.Set[Int](1, 2, 3), Predef.Set[Int](2, 3, 4)) should be Predef.Set[Int](1)" time="0.001">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="setMinus(Predef.Set[Int](1, 2, 3), Predef.Set[Int](4, 5, 6)) should be Predef.Set[Int](1, 2, 3)" time="0.001">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="setMinus(Predef.Set[Int](1, 2, 3), Predef.Set[Int](1, 2, 3, 4)) should be Predef.Set[Int]()" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="has(8)(tree1) should be true" time="0.001">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="has(7)(tree2) should be false" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="has(1)(tree3) should be true" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="maxDepthOf(8)(tree1) should be Some[Int](0)" time="0.001">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="maxDepthOf(7)(tree2) should be None" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="maxDepthOf(1)(tree3) should be Some[Int](3)" time="0.001">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="mul(tree1) should be 8" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="mul(tree2) should be 960" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="mul(tree3) should be 1680" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="countLeaves(tree1) should be 1" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="countLeaves(tree2) should be 3" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="countLeaves(tree3) should be 4" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="postOrder(tree1) should be List[Int](8)" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="postOrder(tree2) should be List[Int](5, 8, 3, 2, 4)" time="0.001">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="postOrder(tree3) should be List[Int](2, 1, 8, 5, 1, 3, 7)" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="countLiterals(be1) should be 2" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="countLiterals(be2) should be 4" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="countLiterals(be3) should be 5" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="countNots(be1) should be 0" time="0.001">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="countNots(be2) should be 2" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="countNots(be3) should be 3" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="depth(be1) should be 1" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="depth(be2) should be 3" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="depth(be3) should be 5" time="0.001">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="eval(be1) should be true" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="eval(be2) should be false" time="0.001">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="eval(be3) should be true" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="getString(be1) should be &quot;(true | false)&quot;" time="0.0">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="getString(be2) should be &quot;(!(true | false) &amp; !(false | true))&quot;" time="0.001">
+                      
+                    </testcase><testcase classname="kuplrg.Spec" name="getString(be3) should be &quot;(!((false | !true) &amp; false) &amp; (true &amp; !false))&quot;" time="0.0">
+                      
+                    </testcase>
+          <system-out><![CDATA[]]></system-out>
+          <system-err><![CDATA[]]></system-err>
+        </testsuite>
